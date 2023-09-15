@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <capability android:name="actions.intent.START_EXERCISE">
+        <intent
+            android:targetPackage="com.vasyerp.demoassistance"
+            android:targetClass="com.vasyerp.demoassistance.MainActivity">
+            <parameter
+                android:name="exercise.name"
+                android:key="name"/>
+            <parameter
+                android:name="exercise.name"
+                android:key="exerciseType"/>
+        </intent>
+    </capability>
+
+
+    <!-- Short and long labels must be @string resource. -->
+    <shortcut
+        android:shortcutId="startTime"
+        android:shortcutShortLabel="@string/activity_timer">
+        <capability-binding android:key="actions.intent.START_EXERCISE">
+            <parameter-binding
+                android:value="exercise.name"
+                android:key="exerciseType"/>
+        </capability-binding>
+    </shortcut>
+</shortcuts>
