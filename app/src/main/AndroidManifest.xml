@@ -19,6 +19,9 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
+                <data
+                    android:host="app.assistant.test"
+                    android:scheme="https" />
             </intent-filter>
             <meta-data
                 android:name="android.app.shortcuts"

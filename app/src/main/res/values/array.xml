@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- array.xml -->
+    <array name="TimePlease">
+        <item>Time</item>
+        <item>Stop</item>
+
+    </array>
+
+    <array name="walkingSynonyms">
+        <item>Walk</item>
+        <item>Hike</item>
+        <item>Hiking</item>
+    </array>
+
+    <array name="cyclingSynonyms">
+        <item>Biking</item>
+        <item>Riding</item>
+        <item>Pedaling</item>
+    </array>
+
+
+</resources>

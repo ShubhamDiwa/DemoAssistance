@@ -49,6 +49,20 @@ class MainActivity : AppCompatActivity() {
          * Oncreate
          */
 
+
+        val featureRequested = intent.data?.getQueryParameter("feature")
+
+        when (featureRequested) {
+            "feature1" -> {
+                // Code to trigger feature 1
+                startTtimer()
+            }
+
+            else -> {
+                // Code to handle when the feature is not recognized
+            }
+        }
+
         intent?.handleIntent()  // here the Intent will start from BIIS
        binding.startButton.setOnClickListener {
             if (!isTimerRunning) {
@@ -57,6 +71,30 @@ class MainActivity : AppCompatActivity() {
                 stopTimer()
             }
      }
+        val intent = intent
+        val action = intent.action
+        val data = intent.data
+        if (Intent.ACTION_VIEW == action && data != null) {
+
+            val featureName = data.getQueryParameter("timeOne")
+            Log.e("Hello", "onCreate:$intent ", )
+            // Now you can do whatever you want with this featureName
+            startTtimer()
+        }
+
+
+        if (intent.hasExtra("exercise.name")) {
+            Log.e("shubhaman", "onCreate:$intent ", )
+            val exerciseName = intent.getStringExtra("exercise.name")
+            if (exerciseName=="startTtimer") {
+                // Start the timer here
+                startTtimer()
+
+            }
+        }
+
+
+
 
     }
 
@@ -96,8 +134,8 @@ class MainActivity : AppCompatActivity() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             // This is just an example, more accurate information should be provided
             outContent.structuredData = JSONObject()
-                .put("@type", "exerciseType")
-                .put("name", "exercise.name")
+                .put("@type", "Exercise")
+                .put("name", "exerciseName")
                 .toString()
         }
     }
@@ -128,13 +166,8 @@ class MainActivity : AppCompatActivity() {
 
         if (startTtimer != null) {
             val type = MainActivity.Type.find(startTtimer)
-
-
             startTtimer()
         }
 
     }
-
-
-
 }

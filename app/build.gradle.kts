@@ -11,8 +11,8 @@ android {
         applicationId = "com.vasyerp.demoassistance"
         minSdk = 24
         targetSdk = 33
-        versionCode = 3
-        versionName = "1.1.1"
+        versionCode = 5
+        versionName = "1.2.2"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }

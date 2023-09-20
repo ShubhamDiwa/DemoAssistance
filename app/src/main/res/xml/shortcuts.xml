@@ -1,29 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <capability android:name="actions.intent.OPEN_APP_FEATURE">
+        <intent>
+            <url-template android:value="https://app.assistant.test/open{?feature}" />
+            <parameter
+                android:name="feature"
+                android:key="feature" />
+        </intent>
+    </capability>
 
+    <shortcut
+        android:shortcutId="TIMER"
+        android:shortcutShortLabel="@string/activity_timer">
+        <capability-binding android:key="actions.intent.OPEN_APP_FEATURE">
+            <parameter-binding
+                android:key="feature"
+                android:value="@array/TimePlease" />
+        </capability-binding>
+    </shortcut>
+     <!--   <capability android:name="actions.intent.START_EXERCISE">
+            <intent
+                android:targetPackage="com.vasyerp.demoassistance"
+                android:targetClass="com.vasyerp.demoassistance.MainActivity">
+                <parameter
+                    android:name="exercise.name"
+                    android:key="name"/>
 
+            </intent>
+        </capability>
+        &lt;!&ndash; Short and long labels must be @string resource. &ndash;&gt;
+        <shortcut
+            android:shortcutId="ID_ONE"
+            android:shortcutShortLabel="@string/activity_timer"
+            android:shortcutLongLabel="@string/activity_timer">
+            <capability-binding android:key="actions.intent.START_EXERCISE">
+                <parameter-binding
+                    android:value="name"
+                    android:key="exercise.name"/>
+            </capability-binding>
+        </shortcut>
+-->
+    <!--<capability android:name="actions.intent.START_EXERCISE">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.vasyerp.demoassistance"
+            android:targetClass="com.vasyerp.demoassistance.MainActivity">
+            <parameter
+                android:name="exercise.name"
+                android:key="exerciseType"
+                android:required="true"/>
+        </intent>
+
+        <intent android:identifier="GET_THING_FALLBACK"
+            android:action="android.intent.action.VIEW"/>
+    </capability>
     <capability android:name="actions.intent.START_EXERCISE">
         <intent
             android:targetPackage="com.vasyerp.demoassistance"
             android:targetClass="com.vasyerp.demoassistance.MainActivity">
             <parameter
                 android:name="exercise.name"
-                android:key="name"/>
+                android:key="exerciseName"
+                android:required="true"/>
+        </intent>
+    </capability>-->
+<!--
+    <capability android:name="actions.intent.OPEN_APP_FEATURE">
+        <intent
+            android:targetPackage="com.vasyerp.demoassistance"
+            android:targetClass="com.vasyerp.demoassistance.MainActivity">
             <parameter
-                android:name="exercise.name"
-                android:key="exerciseType"/>
+                android:name="startTtimer"
+                android:key="timeOne"/>
         </intent>
     </capability>
-
+-->
 
     <!-- Short and long labels must be @string resource. -->
-    <shortcut
+  <!--  <shortcut
         android:shortcutId="startTime"
         android:shortcutShortLabel="@string/activity_timer">
         <capability-binding android:key="actions.intent.START_EXERCISE">
             <parameter-binding
                 android:value="exercise.name"
-                android:key="exerciseType"/>
+                android:key="exerciseName"
+                android:required="true"/>
         </capability-binding>
     </shortcut>
+-->
+<!--
+    <shortcut
+        android:shortcutId="startTime"
+        android:shortcutShortLabel="@string/activity_timer">
+        <capability-binding android:key="actions.intent.OPEN_APP_FEATURE">
+            <parameter-binding
+                android:value="startTtimer"
+                android:key="timeOne"/>
+        </capability-binding>
+    </shortcut>
+-->
 </shortcuts>
